@@ -134,7 +134,7 @@ class Board extends React.Component {
   }
 
   handleChange(answer) {
-    const response = prompt(answer[0], "What/who is:") || "response";
+    const response = prompt(answer[0], "") || "response";
     // TODO: check if response is correct
     // TODO: better way to increment state?
     if (response.toLowerCase() == answer[2]) {
