@@ -6,7 +6,13 @@ function AnswerItem(props) {
   return (
     <li
       className="Answer-main"
-      onClick={() => props.answerClicked([props.card.answer, props.card.value])}
+      onClick={() =>
+        props.answerClicked([
+          props.card.answer,
+          props.card.value,
+          props.card.whatIs
+        ])
+      }
     >
       {props.card.value}
     </li>

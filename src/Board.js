@@ -13,17 +13,17 @@ class Board extends React.Component {
           cards: [
             {
               value: 100,
-              whatIs: "Jim",
+              whatIs: "jim",
               answer: "Office character who loves Pam"
             },
             {
               value: 200,
-              whatIs: "Angela",
+              whatIs: "angela",
               answer: "Office character who loves cats"
             },
             {
               value: 300,
-              whatIs: "Dwight",
+              whatIs: "dwight",
               answer: "Office character who love beets"
             }
           ]
@@ -33,17 +33,17 @@ class Board extends React.Component {
           cards: [
             {
               value: 100,
-              whatIs: "Kevin",
+              whatIs: "kevin",
               answer: "This kitten is the biggest"
             },
             {
               value: 200,
-              whatIs: "Angela",
+              whatIs: "angela",
               answer: "This kitten is the smallest"
             },
             {
               value: 300,
-              whatIs: "Dwight",
+              whatIs: "dwight",
               answer: "This kitten is actually a girl"
             }
           ]
@@ -53,17 +53,17 @@ class Board extends React.Component {
           cards: [
             {
               value: 100,
-              whatIs: "Kevin",
+              whatIs: "kevin",
               answer: "This kitten is the biggest"
             },
             {
               value: 200,
-              whatIs: "Angela",
+              whatIs: "angela",
               answer: "This kitten is the smallest"
             },
             {
               value: 300,
-              whatIs: "Dwight",
+              whatIs: "dwight",
               answer: "This kitten is actually a girl"
             }
           ]
@@ -73,17 +73,17 @@ class Board extends React.Component {
           cards: [
             {
               value: 100,
-              whatIs: "Kevin",
+              whatIs: "kevin",
               answer: "This kitten is the biggest"
             },
             {
               value: 200,
-              whatIs: "Angela",
+              whatIs: "angela",
               answer: "This kitten is the smallest"
             },
             {
               value: 300,
-              whatIs: "Dwight",
+              whatIs: "dwight",
               answer: "This kitten is actually a girl"
             }
           ]
@@ -93,17 +93,17 @@ class Board extends React.Component {
           cards: [
             {
               value: 100,
-              whatIs: "Kevin",
+              whatIs: "kevin",
               answer: "This kitten is the biggest"
             },
             {
               value: 200,
-              whatIs: "Angela",
+              whatIs: "angela",
               answer: "This kitten is the smallest"
             },
             {
               value: 300,
-              whatIs: "Dwight",
+              whatIs: "dwight",
               answer: "This kitten is actually a girl"
             }
           ]
@@ -113,17 +113,17 @@ class Board extends React.Component {
           cards: [
             {
               value: 100,
-              whatIs: "Kevin",
+              whatIs: "kevin",
               answer: "This kitten is the biggest"
             },
             {
               value: 200,
-              whatIs: "Angela",
+              whatIs: "angela",
               answer: "This kitten is the smallest"
             },
             {
               value: 300,
-              whatIs: "Dwight",
+              whatIs: "dwight",
               answer: "This kitten is actually a girl"
             }
           ]
@@ -134,10 +134,14 @@ class Board extends React.Component {
   }
 
   handleChange(answer) {
-    const response = prompt(answer[0], "What/who is:");
+    const response = prompt(answer[0], "What/who is:") || "response";
     // TODO: check if response is correct
     // TODO: better way to increment state?
-    this.setState({ winnings: (this.state.winnings += answer[1]) });
+    if (response.toLowerCase() == answer[2]) {
+      this.setState({ winnings: (this.state.winnings += answer[1]) });
+    } else {
+      this.setState({ winnings: (this.state.winnings -= answer[1]) });
+    }
   }
 
   render() {
