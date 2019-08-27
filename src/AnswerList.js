@@ -2,8 +2,17 @@ import React from "react";
 import "./App.css";
 import { numberLiteralTypeAnnotation } from "@babel/types";
 
+function answerClicked() {
+  const answer = prompt("What is your favorite color", "");
+  console.log("has been clicked!", answer);
+}
+
 function AnswerItem(props) {
-  return <li className="Answer-main">{props.value}</li>;
+  return (
+    <li className="Answer-main" onClick={answerClicked}>
+      {props.value}
+    </li>
+  );
 }
 
 function AnswerList(props) {
